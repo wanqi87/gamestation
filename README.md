@@ -46,6 +46,39 @@ The site is deployed at [gamestation.monster](https://gamestation.monster)
 - Domain name configuration
 - SSL certificate
 
+### Cloudflare Workers Deployment
+1. Install Wrangler CLI:
+```bash
+npm install -g wrangler
+```
+
+2. Login to Cloudflare:
+```bash
+wrangler login
+```
+
+3. Deploy your site:
+```bash
+wrangler deploy
+```
+
+#### Project Structure
+```
+gamestation/
+├── index.html
+├── wrangler.toml
+└── src/
+    └── index.js
+```
+
+#### Troubleshooting
+If you encounter deployment errors:
+1. Ensure you're in the correct directory containing your `index.html`
+2. Verify that your `wrangler.toml` file is properly configured
+3. Make sure all your files are committed to git
+4. Check that you're logged in to Cloudflare (`wrangler login`)
+5. Verify the project structure matches the expected layout
+
 ## 📱 Features
 
 - Responsive design for all devices
