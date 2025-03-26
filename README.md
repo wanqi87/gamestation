@@ -46,38 +46,46 @@ The site is deployed at [gamestation.monster](https://gamestation.monster)
 - Domain name configuration
 - SSL certificate
 
-### Cloudflare Workers Deployment
-1. Install Wrangler CLI:
-```bash
-npm install -g wrangler
-```
-
-2. Login to Cloudflare:
-```bash
-wrangler login
-```
-
-3. Deploy your site:
-```bash
-wrangler deploy
-```
+### Cloudflare Pages Deployment
+1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
+2. Select "Pages" from the left sidebar
+3. Click "Create a project"
+4. Choose "Connect to Git"
+5. Select your GitHub repository
+6. Configure your build settings:
+   - Build command: (leave empty)
+   - Build output directory: ./
+   - Root directory: ./
+7. Click "Save and Deploy"
 
 #### Project Structure
 ```
 gamestation/
 ├── index.html
-├── wrangler.toml
-└── src/
-    └── index.js
+└── README.md
 ```
 
 #### Troubleshooting
-If you encounter deployment errors:
-1. Ensure you're in the correct directory containing your `index.html`
-2. Verify that your `wrangler.toml` file is properly configured
-3. Make sure all your files are committed to git
-4. Check that you're logged in to Cloudflare (`wrangler login`)
-5. Verify the project structure matches the expected layout
+If you encounter deployment issues:
+
+1. **Deployment Issues**
+   - Ensure all files are committed to git
+   - Check the deployment logs in Cloudflare Pages dashboard
+   - Verify the build settings are correct
+   - Make sure the repository is properly connected
+
+2. **Site Access Issues**
+   - Check Cloudflare Dashboard for any error messages
+   - Verify DNS settings in Cloudflare
+   - Ensure SSL/TLS is properly configured
+   - Clear browser cache and try again
+   - Check if the site is accessible in incognito mode
+
+3. **Common Solutions**
+   - Check the deployment logs in Cloudflare Pages
+   - Verify domain settings in Cloudflare
+   - Ensure all required files are present in the deployment
+   - Try redeploying the project
 
 ## 📱 Features
 
